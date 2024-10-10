@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'MaPolice';
+    src: url('Danger\ Zone\ Warning.ttf') format('truetype');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; /* Centre le plateau de jeu verticalement */
+    background-color: #f0f0f0; /* Fond de page */
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 60px); /* 10 colonnes de 40px chacune */
+    grid-gap: 0; /* Aucune espace entre les cellules */
+}
+
+.cell {
+    width: 60px; /* Largeur des cellules */
+    height: 60px; /* Hauteur des cellules */
+    background-color: rgb(0, 255, 0); /* Couleur de fond des cellules */
+    border: 1px solid green; /* Bordure autour des cellules */
+    display: flex; /* Utilisation de flexbox pour centrer le texte */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    font-size: 24px; /* Taille du texte dans les cellules */
+    cursor: pointer; /* Curseur en forme de main */
+}
+
+.cell.revealed {
+    background-color: #eee; /* Couleur des cellules révélées */
+    border: 1px solid grey;
+    font-family: 'MaPolice';
+    text-align: center;
+}
+
+.cell.mine {
+    background-color: red; /* Couleur des mines */
+}
+
+.cell.flag {
+    background-color: yellow; /* Couleur de fond des drapeaux */
+    border: 1px solid rgb(255, 183, 0);
+    font-size: 24px; /* Ajuste la taille du drapeau */
+    color: red; /* Couleur du texte du drapeau */
+}
